@@ -1,6 +1,6 @@
 # Robust-Medical-Image-Segmentation-by-Latent-Space-Data-Augmentation
 
-Tarun Saxena & Anson Antony
+Tarun Saxena & Anson Antony</br>
 OS: macOS Sonoma 14.1.1
 
 
