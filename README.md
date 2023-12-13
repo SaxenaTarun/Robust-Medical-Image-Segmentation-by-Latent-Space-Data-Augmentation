@@ -4,7 +4,7 @@ Tarun Saxena & Anson Antony
 OS: macOS Sonoma 14.1.1
 
 
-## Execution
+## How to run:
 For Data:
 - Download Datasets:
   - [ACDC dataset](https://www.creatis.insa-lyon.fr/Challenge/acdc/databases.html) for training and intra-domain testing
