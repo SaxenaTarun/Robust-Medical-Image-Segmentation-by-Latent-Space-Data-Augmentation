@@ -1,7 +1,9 @@
-# Created by cc215 at 27/12/19
-# Enter feature description here
-# Enter scenario name here
-# Enter steps here
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# load_args.py:- defines a Params class for loading, saving, and updating hyperparameters from a JSON file, and it demonstrates its usage by loading parameters from a specified JSON file and printing the resulting dictionary.
+
 import json
 
 
