@@ -1,6 +1,8 @@
-# Created by cc215 at 27/1/20
-# this dataset is available at '/vol/medic01/users/cc215/data/MedicalDecathlon/Task05_Prostate/preprocessed'
-# from Medical Decathlon challenge dataset, we use T2 as input for the task.
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# prostate_Decathlon_dataset.py:- From Medical Decathlon challenge dataset, we use T2 as input for the task.
 # Note: All images have been preprocessed (resampled to the 0.625 x 0.625 x 3.6 mm, the median value of the voxel spacings), following the preprocessing steps in
 # "nn-Unet"
 # contains 32 patients in total
