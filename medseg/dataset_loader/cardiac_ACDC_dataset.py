@@ -1,15 +1,6 @@
-# Created by cc215 at 27/1/20
-# this dataset is available at '/vol/medic01/users/cc215/Dropbox/projects/DeformADA/Data/ACDC'
-# from ACDC challenge dataset, containing ED/ES whole stack (3D).
-# Note: All images have been preprocessed and cropped to 224 by 224, following the preprocessing steps in
-# "Semi-Supervised and Task-Driven Data Augmentation"
-# https://arxiv.org/abs/1902.05396
-# contains 100 patients in total
-# Data structure:
-# each patient has a nrrd file for each phase ED/ES.
-# path:
-# ED images : root_dir/ED/{patient_id}_img.nrrd,root_dir/ED/{patient_id}_seg.nrrd, all [n_slices*224*224]s
-# ES images : root_dir/ES/{patient_id}_img.nrrd,root_dir/ES/{patient_id}_seg.nrrd, all [n_slices*224*224]s
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
 
 import numpy as np
 import os
@@ -161,6 +152,11 @@ class CardiacACDCDataset(BaseSegDataset):
         return cur_data_dict
 
     def load_patientImage_from_nrrd(self, patient_id, new_spacing=None, normalize=False):
+        """
+        Loads image and label data from NRRD files for a given patient ID. Allows optional resampling 
+        to a new spacing and normalization. Returns both numpy arrays and SimpleITK Image objects 
+        of the image and label data.
+        """
         img_name = self.image_format_name.format(
             p_id=patient_id, frame=self.frame)
         label_name = self.label_format_name.format(
