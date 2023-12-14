@@ -1,7 +1,8 @@
-# Created by cc215 at 07/06/19
-# same unet but use convolutional kernel to do downsampling and upsampling; plus residual connection after downsampling and upsampling
-# Enter scenario name here
-# Enter steps here
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# resconvunet.py:- defines a U-Net variant called "ResConvUNet" for semantic segmentation of medical images using PyTorch.
 
 
 from models.segmentation_models.unet_parts import *
