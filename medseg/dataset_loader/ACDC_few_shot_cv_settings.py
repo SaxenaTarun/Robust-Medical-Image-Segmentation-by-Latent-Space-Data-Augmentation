@@ -1,7 +1,7 @@
-# Created by cc215 at 28/01/20
-# Enter feature description here
-# Enter scenario name here
-# Enter steps here
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
 import numpy as np
 from numpy.random import RandomState
 from sklearn.model_selection import train_test_split
