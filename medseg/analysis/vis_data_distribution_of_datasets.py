@@ -1,9 +1,8 @@
-# Created by cc215 at 12/12/19
-# given two datasets  with labels, plot the umap to show the discrepancy
-# Here shows an example of comparison between ED and ES frames with different augmentation policies
-# Require: Input data 2D array [N*D],
-#          DatasetLabels for each data point, 1D Array [N]
-# Enter steps here
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# vis_data_distribution_of_datasets.py:- loads and compares intensity distributions of cardiac images from two datasets (ACDC and M&Ms) using medical image segmentation transformations.
 
 
 from medseg.dataset_loader.transform import Transformations  #
