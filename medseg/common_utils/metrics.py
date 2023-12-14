@@ -1,3 +1,7 @@
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
 # Adapted from score written by wkentaro
 # https://github.com/wkentaro/pytorch-fcn/blob/master/torchfcn/utils.py
 
