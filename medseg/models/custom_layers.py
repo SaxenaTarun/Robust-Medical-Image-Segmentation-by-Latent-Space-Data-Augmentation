@@ -1,3 +1,8 @@
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# custom_layers.py:- defines a PyTorch segmentation model class, SegmentationModel, which serves as a wrapper for various segmentation models such as U-Net, FCN, and ResUNet.
 import math
 import torch.nn as nn
 from torch.nn.modules.batchnorm import _BatchNorm
