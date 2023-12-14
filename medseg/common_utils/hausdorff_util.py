@@ -1,3 +1,8 @@
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# hausdorff_util.py:- defines a set of classes and functions for performing morphological operations, calculating pairwise measures for image segmentation evaluation, and evaluating regression results.
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import
 from __future__ import division
