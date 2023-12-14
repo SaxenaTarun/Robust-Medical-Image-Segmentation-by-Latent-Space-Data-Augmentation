@@ -1,7 +1,6 @@
-# Created by cc215 at 27/05/19
-# perform elastic transform on 2D image data
-# for data augmentation
-# Enter steps here
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
 
 
 # Function to distort image
