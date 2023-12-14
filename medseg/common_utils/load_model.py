@@ -1,3 +1,8 @@
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# load_model.py:- defines a function restoreOmega that loads a PyTorch model and an optimizer from a checkpoint file and restores the model's state, the optimizer's state, and the starting epoch for further training.
 import os
 from os.path import join
 
