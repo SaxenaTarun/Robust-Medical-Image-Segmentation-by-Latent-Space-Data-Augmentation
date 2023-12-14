@@ -1,3 +1,8 @@
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# unet.py:- defines three U-Net architectures, namely UNet, DeeplySupervisedUNet, and UNetv2, for semantic segmentation using PyTorch. 
 import math
 import torch.nn as nn
 from torch.autograd import Variable
