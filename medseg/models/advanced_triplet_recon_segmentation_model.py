@@ -1,4 +1,8 @@
-# this segmentation model is composed of 2 subnetworks at least, an encoder and an decoder
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# advanced_triplet_recon_segmentation_model.py:-  this segmentation model is composed of 2 subnetworks at least, an encoder and an decoder
 
 import itertools
 
