@@ -1,6 +1,8 @@
-# Created by cc215 at 02/05/19
-# segmentation model definition goes here
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
 
+# base_segmentation_model.py:- defines a PyTorch segmentation model class, SegmentationModel, which serves as a wrapper for various segmentation models such as U-Net, FCN, and ResUNet. 
 import os
 from os.path import join
 import torch.nn as nn
