@@ -1,5 +1,5 @@
 # Name: Tarun Saxena & Anson Antony
-# vis_data_distribution_of_datasets.py:- 7 December, 2023
+# Date:- 7 December, 2023
 
 # vis_intensity_distribution.py:- defines a function (plt_intensity_distribution) using seaborn and matplotlib to visualize and compare the intensity distributions of multiple datasets, and then displays or saves the plot.
 
