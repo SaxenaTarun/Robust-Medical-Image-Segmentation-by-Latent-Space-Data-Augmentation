@@ -1,3 +1,8 @@
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# init_weight.py:- defines several weight initialization functions and a higher-level function for initializing a neural network's weights based on a specified initialization method. 
 from torch.nn import init
 import torch
 import torch.nn as nn
