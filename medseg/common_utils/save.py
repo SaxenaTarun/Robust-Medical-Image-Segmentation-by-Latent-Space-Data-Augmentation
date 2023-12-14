@@ -1,3 +1,8 @@
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# save.py:- defines utility functions for saving and visualizing medical image data, including saving and loading dictionaries, saving images, visualizing results, linking images, saving models, and saving medical images in various formats.
 import os
 import SimpleITK as sitk
 import numpy as np
