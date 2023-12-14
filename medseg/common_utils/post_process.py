@@ -1,3 +1,9 @@
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# post_process.py:- defines a function keep_largest_connected_components that retains only the largest connected components for each label in a segmentation mask using skimage.measure.
+
 import numpy as np
 from skimage import measure as measure
 
