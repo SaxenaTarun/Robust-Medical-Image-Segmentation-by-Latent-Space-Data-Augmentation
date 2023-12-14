@@ -1,7 +1,9 @@
-# Created by cc215 at 09/12/19
-# Enter feature description here
-# Enter scenario name here
-# Enter steps here
+
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# visual_embedding.py:- defines two functions for visualizing data embeddings using UMAP: plot_umap for visualizing a single dataset and plot_multi_dataset_umap for visualizing multiple datasets. The last part of the script demonstrates the usage of plot_umap.
 
 
 import umap
