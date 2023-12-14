@@ -1,5 +1,8 @@
-# Created by cc215 at 02/05/19
-# Modified by cc215 at 11/12/19
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# test_basic_segmentation_solver.py:- 
 
 # This code is for testing basic segmentation networks
 # Steps:
@@ -8,6 +11,7 @@
 #  3. get the prediction result
 #  4. update the metric
 #  5. save the results.
+
 from __future__ import print_function
 from os.path import join
 import os
@@ -59,7 +63,8 @@ class TestSegmentationNetwork():
             os.makedirs(self.save_path)
         self.df = None
         self.result_dict = {}
-
+    
+    # Run the evaluation on the segmentation model.
     def run(self):
         print('start evaluating')
         self.progress_bar = tqdm(total=100)
@@ -81,7 +86,7 @@ class TestSegmentationNetwork():
             save_path=join(self.save_path, self.detailed_report_file_name))
         # save top k and worst k cases
         print('<-finish->')
-
+    # Evaluate the segmentation model on a batch of data.
     def evaluate(self, i: int, data_tensor_pack: dict, total_number: int, maximum_batch_size=10):
         '''
         :param i: id
