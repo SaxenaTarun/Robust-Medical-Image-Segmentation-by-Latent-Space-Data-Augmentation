@@ -1,3 +1,8 @@
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# model_util.py:- The HookBasedFeatureExtractor class enables the extraction of input and output feature maps of a specified layer during the forward pass of a neural network.
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
