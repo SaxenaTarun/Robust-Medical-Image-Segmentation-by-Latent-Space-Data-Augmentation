@@ -1,4 +1,10 @@
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
 
+# train_adv_supervised_segmentation_triplet.py:- defines and trains a cooperative training and latent space data augmentation (DA) model for robust segmentation in medical images, specifically on the ACDC dataset.
+# involves loading configurations, preparing the dataset, initializing the segmentation model, and then performing training epochs with evaluation steps. 
+# cooperative training includes both standard training and hard example mining using latent space DA.
 from __future__ import print_function
 import argparse
 from os.path import join, exists
@@ -23,13 +29,13 @@ from medseg.dataset_loader.transform import Transformations  #
 from medseg.models.model_util import makeVariable
 from medseg.models.advanced_triplet_recon_segmentation_model import AdvancedTripletReconSegmentationModel
 
-
+# Function to set seed for reproducibility 
 def seed_worker(worker_id):
     worker_seed = torch.initial_seed() % 2**32
     np.random.seed(worker_seed)
     random.seed(worker_seed)
 
-
+# Function to sample a batch from the data iterator
 def sample_batch(dataiter, dataloader, SSL_flag=False):
     try:
         batch = next(dataiter)
@@ -44,7 +50,7 @@ def sample_batch(dataiter, dataloader, SSL_flag=False):
         unlabelled_batch = None
     return labelled_batch, unlabelled_batch, dataiter
 
-
+# Function to get a batch from the data iterator and format it
 def get_batch(dataiter, train_loader, use_gpu=True, keep_origin=True):
     labelled_batch, unlabelled_batch, dataiter = sample_batch(
         dataiter=dataiter, dataloader=train_loader, SSL_flag=False)
@@ -59,7 +65,7 @@ def get_batch(dataiter, train_loader, use_gpu=True, keep_origin=True):
                            use_gpu=use_gpu, requires_grad=False)
     return image_l, label_l, unlabelled_batch, dataiter
 
-
+# Function to evaluate the segmentation model on the validation set
 def eval_model(segmentation_model, validate_loader, val_dataiter, keep_origin=True):
     segmentation_model.eval()
     segmentation_model.running_metric.reset()
