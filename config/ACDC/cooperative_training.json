@@ -1,8 +1,4 @@
-# Name: Tarun Saxena & Anson Antony
-# CS 7180 Advanced Perception
-# Date: 7 December, 2023
 
-# cooperative_training.json:- defines the dataset, model architecture, training procedure and data augmentation parameters to perform cooperative training of an image segmentation network with latent space masking for robust medical image analysis.
  {
   "name": "cooperative training",
   "data": {
