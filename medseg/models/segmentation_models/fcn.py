@@ -1,3 +1,8 @@
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# fcn.py:- defines a Fully Convolutional Network (FCN) for medical image segmentation using PyTorch. 
 import torch.nn as nn
 import torch.nn.functional as F
 import torch
@@ -64,7 +69,7 @@ class FCN(nn.Module):
         # initialise weights
 
         self.dropout = decoder_dropout
-
+# Extract features from the input through the downsampling path.
     def extract(self, input):
         x = self.conv1_1(input)
         l1 = self.conv1_2(x)
@@ -112,6 +117,7 @@ class FCN(nn.Module):
 
         return segmentation
 
+    # Apply softmax to the predicted segmentation map.
     @staticmethod
     def apply_argmax_softmax(pred):
         log_p = F.softmax(pred, dim=1)
