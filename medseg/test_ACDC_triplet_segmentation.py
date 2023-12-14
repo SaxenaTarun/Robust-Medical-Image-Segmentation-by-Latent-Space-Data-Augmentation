@@ -1,3 +1,8 @@
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# test_ACDC_triplet_segmentation.py:- trains and evaluates segmentation models on various test datasets, comparing the performance of different training methods, and generates summary reports with metrics such as Dice mean and Dice standard deviation for each method on each dataset.
 '''
 train a model on various test datasets
 '''
@@ -16,7 +21,6 @@ from medseg.dataset_loader.transform import Transformations
 from medseg.dataset_loader.base_segmentation_dataset import ConcatDataSet
 from medseg.common_utils.basic_operations import check_dir
 
-## change your data root dir here!
 PROJECT_DATA_ROOT_DIR = '/vol/biomedic3/cc215/data/MICCAI2021_multi_domain_robustness_datasets'
 
 ## test data cropping
@@ -28,6 +32,7 @@ IDX2CLASS_DICT = {
         2: 'MYO',
         3: 'RV',
     }
+
 def get_testset(test_dataset_name, frames=['ED', 'ES']):
     data_aug_policy_name = 'no_aug'
     tr = Transformations(data_aug_policy_name=data_aug_policy_name, pad_size=pad_size,
@@ -76,7 +81,7 @@ def get_testset(test_dataset_name, frames=['ED', 'ES']):
         concatdataset = testset_list[0]
     return concatdataset
 
-
+# Function to train and evaluate segmentation models on various test datasets.
 def evaluate(method_name, segmentation_model, test_dataset_name, frames=['ED', 'ES'], metrics_list=['Dice'],
              save_report_dir=None,
              save_predict=False, save_soft_prediction=False, foreground_only=False):
