@@ -1,3 +1,8 @@
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# generate_artefacted_data.py:- generates augmented medical images with artifacts (motion, spike, ghosting, bias) for a subset of patients in a dataset and saves the augmented images along with their original labels in a specified directory.
 import numpy as np
 import os
 from os.path import join
