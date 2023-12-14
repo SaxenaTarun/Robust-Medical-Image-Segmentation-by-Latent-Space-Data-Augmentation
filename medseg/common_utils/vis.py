@@ -1,3 +1,8 @@
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# vis.py:- defines functions for visualizing images, noise, bias fields, and warped grids, along with functions for plotting images and deformation fields with matplotlib. The colorization of masks using a predefined palette is also included.
 import numpy as np
 from PIL import Image
 import matplotlib.pyplot as plt
