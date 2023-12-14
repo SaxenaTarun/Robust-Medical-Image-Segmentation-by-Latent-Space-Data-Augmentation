@@ -1,3 +1,8 @@
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# transform.py:- defines a class named Transformations that encapsulates various data augmentation configurations and transformations used for medical image segmentation tasks.
 import torchsample.transforms as ts
 from medseg.dataset_loader._utils.affine_transform import MyRandomFlip, MySpecialCrop, MyPad, MyRandomChoiceRotate
 from medseg.dataset_loader._utils.intensity_transform import RandomGamma, MyNormalizeMedicPercentile, MyRandomPurtarbation, MyRandomPurtarbationV2, RandomBrightnessFluctuation
@@ -6,6 +11,8 @@ from medseg.dataset_loader._utils.elastic_transform import MyElasticTransform, M
 
 class Transformations:
     def __init__(self, data_aug_policy_name, pad_size=(80, 80, 1), crop_size=(80, 80, 1)):
+        # Constructor initializes the transformation object with specified parameters
+        self.name = data_aug_policy_name
         self.name = data_aug_policy_name
         self.pad_size = pad_size
         self.crop_size = crop_size
@@ -44,6 +51,7 @@ class Transformations:
         return self.get_transform(aug_config)
 
     def get_transform(self, config):
+        # Method to construct the transformation pipeline based on the given configuration
         train_transform = ts.Compose([ts.PadNumpy(size=self.pad_size),
                                       ts.ToTensor(),
                                       ts.ChannelsFirst(),
@@ -112,6 +120,7 @@ class Transformations:
                 'aug_validate': aug_valid_transform}
 
     def no_aug(self):
+         # Configuration for no augmentation
         config = {
             # affine augmentation
             'flip_flag': [False, False, 0.0],
@@ -142,7 +151,7 @@ class Transformations:
             'perturb_v2_noise_epsilon': 0.01
         }
         return config
-
+# Configuration for scaling
     def scale_aug(self):
         config = self.no_aug()
         config['scale_val'] = (0.8, 1.2)
