@@ -1,3 +1,8 @@
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# dataset_utils.py:- contains utility functions for preprocessing and handling medical image data. 
 import SimpleITK as sitk
 import numpy as np
 
