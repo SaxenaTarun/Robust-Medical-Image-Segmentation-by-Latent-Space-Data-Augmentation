@@ -1,7 +1,8 @@
-# Created by cc215 at 25/11/19
-# draw confusion matrix given predictions and targets (support multi-class)
-# Enter scenario name here
-# Enter steps here
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# confusion_matrix.py:- defines a function, plot_confusion_matrix, which utilizes sci-kit-learn to generate and display a confusion matrix for evaluating classification model performance. The function provides customization options for labels, normalization, display settings, and visualization parameters.
 
 import numpy as np
 from sklearn.metrics import confusion_matrix,ConfusionMatrixDisplay
