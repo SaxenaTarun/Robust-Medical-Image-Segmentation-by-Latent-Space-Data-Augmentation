@@ -1,3 +1,8 @@
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# custom_loss.py:- defines several loss functions for image segmentation and feature comparison tasks. 
 import torch
 import torch.nn.functional as F
 import torch.nn as nn
