@@ -1,4 +1,8 @@
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
 
+# encoder_decoder.py:- establishes a modular and flexible architecture for medical image segmentation, allowing the use of different upsampling and downsampling methods, domain-specific layers, and dual-branch encoding for latent code extraction.
 import math
 import torch
 import torch.nn as nn
@@ -15,7 +19,7 @@ def normal_init(m, mean, std):
         m.weight.data.normal_(mean, std)
         m.bias.data.zero_()
 
-
+#  Represents a residual block for downsampling. Consists of a downsampling operation followed by two convolutional layers, each with normalization and leaky ReLU activation.
 class res_convdown(nn.Module):
     '''
     '''
@@ -225,7 +229,7 @@ class res_convdown(nn.Module):
 #         # appl
 #         return res_x
 
-
+# Represents a residual block for upsampling using nearest-neighbor interpolation. Similar structure to res_convdown but for upsampling.
 class res_NN_up(nn.Module):
     '''
     upscale with NN upsampling followed by conv
@@ -281,7 +285,7 @@ class res_NN_up(nn.Module):
         # appl
         return res_x
 
-
+#  Represents a residual block for upsampling with different methods (NN, bilinear, Conv2, Conv4). Can be chosen based on the up_type parameter.
 class res_up_family(nn.Module):
     '''
     upscale with different upsampling methods
@@ -347,7 +351,9 @@ class res_up_family(nn.Module):
         # appl
         return res_x
 
-
+#  Defines an encoder architecture with downsampling blocks.
+#  Outputs a tensor with specified channels.
+#  Uses leaky ReLU activation.
 class MyEncoder(nn.Module):
     '''
     Naive Encoder
@@ -414,7 +420,9 @@ class MyEncoder(nn.Module):
 
         return x5
 
-
+#  Defines a decoder architecture with upsampling blocks.
+#  Takes an input tensor and produces an output tensor with specified channels.
+#  Uses leaky ReLU activation.
 class MyDecoder(nn.Module):
     '''
 
@@ -452,7 +460,8 @@ class MyDecoder(nn.Module):
             x5 = self.last_act(x5)
         return x5
 
-
+# Defines an encoder with two branches, producing two latent codes (z_i and z_s).
+# z_i is obtained from a general encoder, and z_s is obtained by filtering z_i.
 class Dual_Branch_Encoder(nn.Module):
     '''
     FTN's encoder, produces two latent codes, z_i and z_s
@@ -502,7 +511,8 @@ class Dual_Branch_Encoder(nn.Module):
         z_s = self.filter_code(z_i)
         return z_i, z_s
 
-
+# Represents a domain-specific residual block for downsampling.
+# Similar to res_convdown but with domain-specific batch normalization.
 class ds_res_convdown(nn.Module):
     '''
     res conv down with domain specific layers
@@ -564,7 +574,9 @@ class ds_res_convdown(nn.Module):
             res_x = self.drop(res_x)
         return res_x
 
-
+# Defines an encoder with domain-specific batch normalization layers.
+# Outputs a tensor with specified channels.
+# Uses leaky ReLU activation and domain-specific normalization.
 class DomainSpecificEncoder(nn.Module):
     '''
     Encoder with domain specific batch normalization layers.
