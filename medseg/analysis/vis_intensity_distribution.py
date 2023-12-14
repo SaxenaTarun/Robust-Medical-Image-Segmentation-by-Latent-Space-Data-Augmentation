@@ -1,4 +1,5 @@
 # Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
 # Date:- 7 December, 2023
 
 # vis_intensity_distribution.py:- defines a function (plt_intensity_distribution) using seaborn and matplotlib to visualize and compare the intensity distributions of multiple datasets, and then displays or saves the plot.
