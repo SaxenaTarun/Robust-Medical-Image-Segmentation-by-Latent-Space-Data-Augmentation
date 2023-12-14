@@ -1,7 +1,9 @@
-# Created by cc215 at 27/12/19
-# Enter feature description here
-# Enter scenario name here
-# Enter steps here
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# basic_operations.py:- This code provides utility functions for medical image segmentation tasks, including seed setting, directory operations, normalization, and data augmentation.
+
 from numpy.lib.function_base import copy
 import os
 import shutil
