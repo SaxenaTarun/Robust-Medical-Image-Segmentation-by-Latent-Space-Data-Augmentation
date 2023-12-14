@@ -1,3 +1,7 @@
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
 import os
 
 import numpy as np
@@ -38,13 +42,13 @@ def normalize_minmax_data(image_data):
 
 def crop_or_pad_slice_to_size(img_slice, nx, ny):
     """
-    To crop the input 2D slice for the given dimensions
-    input params :
-        image_slice : 2D slice to be cropped
-        nx : dimension in x
-        ny : dimension in y
-    returns:
-        slice_cropped : cropped 2D slice
+    Crop or pad a 2D slice to a given size.
+    Args:
+        img_slice: The 2D slice to be cropped or padded.
+        nx: The target size in the x-dimension.
+        ny: The target size in the y-dimension.
+    Returns:
+        slice_cropped: The cropped or padded 2D slice.
     """
     slice_cropped = np.zeros((nx, ny))
     x, y = img_slice.shape
@@ -69,6 +73,15 @@ def crop_or_pad_slice_to_size(img_slice, nx, ny):
 
 
 def correct_image(sitkImage, threshhold=0.001):
+    """
+    Correct the intensity inhomogeneity in the image using N4 bias field correction.
+    Args:
+        sitkImage: The SimpleITK image to be corrected.
+        threshhold: The threshold used for creating a mask for the correction.
+    Returns:
+        correctedImage: The bias-corrected image.
+        time_taken: Time taken for the correction process.
+    """
     corrector = sitk.N4BiasFieldCorrectionImageFilter()
     start = time.time()
 
@@ -81,6 +94,17 @@ def correct_image(sitkImage, threshhold=0.001):
 
 
 def resample_np_array(normalized_array, old_spacing, interp=sitk.sitkLinear, keep_z_spacing=True, new_spacing=[1.367, 1.367, -1]):
+    """
+    Resample a numpy array to a new spacing.
+    Args:
+        normalized_array: The numpy array to be resampled.
+        old_spacing: The original spacing of the array.
+        interp: The interpolation method (default is sitk.sitkLinear).
+        keep_z_spacing: Whether to keep the original z-spacing.
+        new_spacing: The new spacing for resampling.
+    Returns:
+        resampleArray: The resampled numpy array.
+    """
     sitkImage = sitk.GetImageFromArray(normalized_array)
     sitkImage.SetSpacing(spacing=old_spacing)
     resampleImage = resample_by_spacing(
