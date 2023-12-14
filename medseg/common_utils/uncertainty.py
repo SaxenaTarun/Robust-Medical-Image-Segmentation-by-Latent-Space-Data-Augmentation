@@ -1,6 +1,9 @@
-# Created by cc215 at 22/05/19
-# this file contains common method to estimate uncertainty
-# using MC dropout
+# Name: Tarun Saxena & Anson Antony
+# CS 7180 Advanced Perception
+# Date: 7 December, 2023
+
+# uncertainty.py:- this file contains common method to estimate uncertainty using MC dropout
+
 import numpy as np
 
 
